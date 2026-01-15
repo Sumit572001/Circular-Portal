@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Portal</title>
+    <style>
+  
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    body {
+        background-image: url('https://nyatigroup.com/assets/images/Nyati-website-image.jpg'); 
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .glass-container {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        width: 380px;
+        animation: fadeInUp 0.8s ease-out;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    h2 { 
+        color: #333; 
+        margin-bottom: 20px; 
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #555;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    select {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #eee;
+        border-radius: 8px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background-color: white;
+    }
+
+    select:hover {
+        border-color: #007bff;
+    }
+
+    select:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(135deg, #007bff, #0056b3);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    }
+
+    button:hover {
+        transform: scale(1.03); 
+        box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+    }
+
+    button:active {
+        transform: scale(0.95); 
+    }
+    </style>
+</head>
+<body>
+
+    <div class="glass-container">
+        <h2>Circular Search</h2>
+        
+        <div class="input-group">
+            <label>Department</label>
+            <select id="department">
+                <option value="">Select Department</option>
+                <option value="EPC (Post Tender Department)">EPC (Post Tender Department)</option>
+                <!-- <option value="Pre Tender Department">Pre Tender Department</option> -->
+               
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>Select Circular</label>
+            <select id="circular">
+    <option value="">Select Circular No</option>
+    <option value="https://drive.google.com/file/d/1KXVb5xQ0Mk6CTba2kFKzwfmazp1UX9Hl/view?usp=drive_link">Circular No. 01 - Nyati ERA</option>
+    <option value="https://drive.google.com/file/d/16dHOc0x-KERXfEgswub1lXIE2vd0lEFm/view?usp=drive_link">Circular No. 02 - Nyati Esteban II</option>
+    <option value="https://drive.google.com/file/d/1_d_cfVimaIPXwJlWmWrI_agBW-5ug69I/view?usp=drive_link">Circular No. 03 - Nyati Emerald</option>
+    <option value="https://drive.google.com/file/d/1YGdTUlkB0RNvQAVkfV0fJ_jjJRMuA_WL/view?usp=drive_link">Circular No. 04 - Scrap Invoice</option>
+    <option value="https://drive.google.com/file/d/18NIgSFdYw3UnJLA3jc_SaTYTpubUupzK/view?usp=drive_link">Circular No. 05 - Aluform Shuttering</option>
+    <option value="https://drive.google.com/file/d/1PMdbq7sWrqYWGXDKbOFPjTVM9O_ZTack/view?usp=drive_link">Circular No. 06 - Activity Sequence</option>
+    <option value="https://drive.google.com/file/d/1676Ar63CnjT1Lpj13LHwb6MB8ab67Q7r/view?usp=drive_link">Circular No. 07 - Promotions</option>
+    <option value="https://drive.google.com/file/d/1RFmkGBIb3wJ2E7cdOmKJ3qiQzQygrbAM/view?usp=drive_link">Circular No. 08 - Nyati Equinox</option>
+    <option value="https://drive.google.com/file/d/1iYSITSdfzNAWTv4lP2Uq1R_jwjkza0qC/view?usp=drive_link">Circular No. 09 - Watchman Report</option>   
+    <option value="https://drive.google.com/file/d/1tIjNaBfb9LBQvX8cOu2LNZ8wGWy1djyC/view?usp=drive_link">Circular No. 10 - Quality Testing</option>
+    <option value="https://drive.google.com/file/d/1qRoSBc-79pHSrP7OvZnOIHKePXyJlijj/view?usp=drive_link">Circular No. 11 - Diesel Consumption</option>
+    <option value="https://drive.google.com/file/d/1XIWhccX2EeEPiKFMuN3ndmylrxK6iz-H/view?usp=drive_link">Circular No. 12</option>
+    <option value="https://drive.google.com/file/d/1niPDpmhRwld7P7SWyLpc0bO3T9AgnSYc/view?usp=drive_link">Circular No. 13 - Housekeeping</option>
+    <option value="https://drive.google.com/file/d/1RiF3Fal_gUyRegYRo0BVJa4BhQo2WKX4/view?usp=drive_link">Circular No. 14 - Material Reconciliation</option>
+    <option value="https://drive.google.com/file/d/17rROEZrha2nbu-3nzeT2R3_GhKMjd4PB/view?usp=drive_link">Circular No. 15 - Mock-up</option>
+    <option value="https://drive.google.com/file/d/1cXsptmvi-aTPhGuwXhYXNOJCwJnqBx8-/view?usp=drive_link">Circular No. 16 - Dept Labour Misuse</option>
+    <option value="https://drive.google.com/file/d/1CFeOmOMmsE7sNxl6_SLEabUcDJmTcVgi/view?usp=drive_link">Circular No. 17 - Bill Processing</option>
+    <option value="https://drive.google.com/file/d/1zJTcjbXiPMfEpUDrCkpqTKZ-ia6clLvy/view?usp=drive_link">Circular No. 18 - Material Reconciliation</option>
+    <option value="https://drive.google.com/file/d/1wyhBadiC1fbWIIfKMN8sHALray_ZjeEJ/view?usp=drive_link">Circular No. 19 - Cancelled</option>
+    <option value="https://drive.google.com/file/d/1QkBgpMzOCOc63RUG-5oG3z8oDL54GNko/view?usp=drive_link">Circular No. 20 - Security Staff</option>
+    
+</select>
+        </div>
+
+        <button onclick="redirectUser()">Submit</button>
+    </div>
+
+    <script>
+    function redirectUser() {
+    const fileUrl = document.getElementById('circular').value;
+    const dept = document.getElementById('department').value;
+
+    if (dept === "" || fileUrl === "") {
+        alert("Please select both Department and Circular!");
+        return;
+    }
+
+    // Ab folder ki zaroorat nahi, direct link open hoga
+    window.open(fileUrl, "_blank"); 
+}
+</script>
+</body>
+</html>
