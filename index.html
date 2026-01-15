@@ -155,23 +155,24 @@
     </div>
 
     <script>
-    function redirectUser() {
-    let fileUrl = document.getElementById('circular').value;
-    const dept = document.getElementById('department').value;
+   function redirectUser() {
+        let fileUrl = document.getElementById('circular').value;
+        const dept = document.getElementById('department').value;
 
-    if (dept === "" || fileUrl === "") {
-        alert("Please select both Department and Circular!");
-        return;
+        if (dept === "" || fileUrl === "") {
+            alert("Please select both Department and Circular!");
+            return;
+        }
+
+        if (fileUrl.includes("drive.google.com")) {
+            const fileId = fileUrl.split('/d/')[1].split('/')[0];
+            fileUrl = "https://drive.google.com/file/d/" + fileId + "/view";
+        }
+
+        window.open(fileUrl, "_blank"); 
     }
-
-    if (fileUrl.includes("drive.google.com")) {
-     const fileId = fileUrl.split('/d/')[1].split('/')[0];
-        fileUrl = "https://drive.google.com/uc?export=view&id=" + fileId;
-    }
-
-    window.open(fileUrl, "_blank"); 
-}
 </script>
 </body>
 </html>
+
 
