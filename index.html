@@ -127,7 +127,6 @@
             <label>Select Circular</label>
             <select id="circular">
     <option value="">Select Circular No</option>
-     <option value="">Select Circular No</option>
     <option value="https://drive.google.com/file/d/1KXVb5xQ0Mk6CTba2kFKzwfmazp1UX9Hl/view?usp=drive_link">Circular No. 01 - Nyati ERA</option>
     <option value="https://drive.google.com/file/d/16dHOc0x-KERXfEgswub1lXIE2vd0lEFm/view?usp=drive_link">Circular No. 02 - Nyati Esteban II</option>
     <option value="https://drive.google.com/file/d/1_d_cfVimaIPXwJlWmWrI_agBW-5ug69I/view?usp=drive_link">Circular No. 03 - Nyati Emerald</option>
@@ -148,6 +147,7 @@
     <option value="https://drive.google.com/file/d/1zJTcjbXiPMfEpUDrCkpqTKZ-ia6clLvy/view?usp=drive_link">Circular No. 18 - Material Reconciliation</option>
     <option value="https://drive.google.com/file/d/1wyhBadiC1fbWIIfKMN8sHALray_ZjeEJ/view?usp=drive_link">Circular No. 19 - Cancelled</option>
     <option value="https://drive.google.com/file/d/1QkBgpMzOCOc63RUG-5oG3z8oDL54GNko/view?usp=drive_link">Circular No. 20 - Security Staff</option>
+    
 </select>
         </div>
 
@@ -155,7 +155,29 @@
     </div>
 
     <script>
- function redirectUser() {
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    document.onkeydown = function(e) {
+        if (e.keyCode == 123) { 
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { 
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) { 
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { 
+            return false;
+        }
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { 
+            return false;
+        }
+    };
+
+    function redirectUser() {
         let fileUrl = document.getElementById('circular').value;
         const dept = document.getElementById('department').value;
 
@@ -166,17 +188,14 @@
 
         if (fileUrl.includes("drive.google.com")) {
             const fileId = fileUrl.split('/d/')[1].split('/')[0];
-            
             fileUrl = "https://drive.google.com/viewerng/viewer?embedded=true&url=" + 
                       encodeURIComponent("https://drive.google.com/uc?export=download&id=" + fileId);
         }
-
         window.open(fileUrl, "_blank"); 
     }
 </script>
 </body>
 </html>
-
 
 
 
