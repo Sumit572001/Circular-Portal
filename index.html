@@ -118,8 +118,6 @@
             <select id="department">
                 <option value="">Select Department</option>
                 <option value="EPC (Post Tender Department)">EPC (Post Tender Department)</option>
-                <!-- <option value="Pre Tender Department">Pre Tender Department</option> -->
-               
             </select>
         </div>
 
@@ -153,28 +151,28 @@
     </div>
 
     <script>
+    
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
+        return false;
     });
 
-    document.onkeydown = function(e) {
+   document.onkeydown = function(e) {
         if (e.keyCode == 123) { 
             return false;
         }
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { 
-            return false;
-        }
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) { 
-            return false;
-        }
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { 
+       if (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0))) { 
             return false;
         }
         if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { 
             return false;
         }
     };
-
+    setInterval(function() {
+        if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
+            console.clear();
+        }
+    }, 1000);
     function redirectUser() {
         let fileUrl = document.getElementById('circular').value;
         const dept = document.getElementById('department').value;
