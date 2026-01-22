@@ -151,28 +151,33 @@
     </div>
 
     <script>
-    
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
+        alert("Security Alert: Right click is disabled on this portal.");
         return false;
     });
 
-   document.onkeydown = function(e) {
-        if (e.keyCode == 123) { 
-            return false;
-        }
-       if (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0))) { 
-            return false;
-        }
-        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { 
-            return false;
-        }
+    document.onkeydown = function(e) {
+        if (e.keyCode == 123) { return false; }
+        if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) { return false; }
+        if (e.ctrlKey && e.keyCode == 85) { return false; }
+        if (e.ctrlKey && e.keyCode == 83) { return false; }
     };
-    setInterval(function() {
-        if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
-            console.clear();
-        }
-    }, 1000);
+
+    (function() {
+        var element = new Image();
+        Object.defineProperty(element, 'id', {
+            get: function() {
+                
+                window.location.reload(); 
+                alert("Developer Tools Detected! Access Denied.");
+            }
+        });
+        console.log('%c', element);
+    })();
+
+    document.ondragstart = function() { return false; };
+
     function redirectUser() {
         let fileUrl = document.getElementById('circular').value;
         const dept = document.getElementById('department').value;
