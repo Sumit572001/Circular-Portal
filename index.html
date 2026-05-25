@@ -242,7 +242,8 @@
         <div class="input-group">
             <label>Select Year</label>
             <select id="yearSelect" onchange="updateCircularList()">
-                <option value="2025 - 2026" selected>2025 - 2026</option>
+                <option value="" disabled selected>--- Select Year ---</option>
+                <option value="2025 - 2026">2025 - 2026</option>
                 <option value="2026 - 2027">2026 - 2027</option>
             </select>
         </div>
@@ -415,8 +416,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-            // Initialize circular list for default year
-            updateCircularList();
+            // Start with empty circular list until year is selected
 
             const searchWrapper = document.getElementById('searchWrapper');
             const searchIcon = document.getElementById('searchIcon');
